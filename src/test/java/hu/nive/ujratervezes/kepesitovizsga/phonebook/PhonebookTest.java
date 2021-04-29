@@ -59,19 +59,19 @@ class PhonebookTest {
         assertEquals(expected, actual);
     }
 
-//    @Test
-//    void test_multipleEntries() throws IOException {
-//        String actualPath = "phonebookOutput/output3.txt";
-//        TreeMap<String, String> contacts = new TreeMap<>();
-//        contacts.put("Jane Doe", "1-555-1111");
-//        contacts.put("John Doe", "1-555-1010");
-//        contacts.put("John Smith", "1-555-2020");
-//        phonebook.exportPhonebook(contacts, actualPath);
-//
-//        Set<String> expected = new HashSet<>(List.of("Jane Doe: 1-555-1111", "John Doe: 1-555-1010", "John Smith: 1-555-2020"));
-//
-//        assertTrue(Path.of(actualPath).toFile().exists());
-//        Set<String> actual = new HashSet<>(Files.readAllLines(Path.of(actualPath)));
-//        assertEquals(expected, actual);
-//    }
+    @Test
+    void test_multipleEntries() throws IOException {
+        String actualPath = "phonebookOutput/output3.txt";
+        TreeMap<String, String> contacts = new TreeMap<>();
+        contacts.put("Jane Doe", "1-555-1111");
+        contacts.put("John Doe", "1-555-1010");
+        contacts.put("John Smith", "1-555-2020");
+        phonebook.exportPhonebook(contacts, actualPath);
+
+        Set<String> expected = new HashSet<>(List.of("Jane Doe: 1-555-1111", "John Doe: 1-555-1010", "John Smith: 1-555-2020"));
+
+        assertTrue(Path.of(actualPath).toFile().exists());
+        Set<String> actual = new HashSet<>(Files.readAllLines(Path.of(actualPath)));
+        assertEquals(expected, actual);
+    }
 }

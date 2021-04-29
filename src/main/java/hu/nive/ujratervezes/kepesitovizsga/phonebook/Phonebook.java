@@ -26,11 +26,9 @@ public class Phonebook {
 
     private void writeLines(BufferedWriter writer, Map<String, String> contacts) throws IOException {
 
-        List<String> lines = new ArrayList<>();
         for (Map.Entry<String, String> entry : contacts.entrySet()) {
-            lines.add(entry.getKey() + ": " + entry.getValue());
+            writer.write(entry.getKey() + ": " + entry.getValue() + "\n");
         }
-        String result = String.join(", ", lines);
-        writer.write(result);
+
     }
 }
